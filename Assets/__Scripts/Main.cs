@@ -15,6 +15,9 @@ public class Main : MonoBehaviour {
     public float enemyInsetDefault = 1.5f; // Padding for position
     public float gameRestartDelay = 2;
 
+	[Header("Dynamic")]
+	public int score = 0;
+
     public WeaponDefinition[] weaponDefinitions;
     public GameObject prefabPowerUp;
     public eWeaponType[] powerUpFrequency = new eWeaponType[]
@@ -48,6 +51,7 @@ public class Main : MonoBehaviour {
             // Set it to the position of the destroyed ship
             pu.transform.position = e.transform.position;
         }
+		S.score += e.score;
     }
 
     private void Awake()
